@@ -3,12 +3,36 @@
   "version": "1.0.0",
   "description": "Example using OpenLayers with Webpack",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "pretest": "eslint .",
+    "test": "webpack --config test/webpack.config.js && mocha test/bundle.js"
   },
   "devDependencies": {
-    "webpack": "^2.2.1"
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "eslint": "^3.19.0",
+    "eslint-config-openlayers": "^7.0.0",
+    "jsdom": "^11.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^3.4.1",
+    "should": "^11.2.1",
+    "should-approximately-deep": "^1.1.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "ol": "^4.0.1-beta.2"
+    "@turf/along": "^4.3.0",
+    "@turf/line-distance": "^4.3.0",
+    "ol": "^4.1.1"
+  },
+  "eslintConfig": {
+    "extends": "openlayers",
+    "env": {
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    }
   }
 }
