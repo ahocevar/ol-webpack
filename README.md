@@ -4,7 +4,7 @@ This example demonstrates how the `ol` package can be used with webpack 2. It in
 
 Clone the project.
 
-    git clone git@bitbucket.org:ahocevar/ol-webpack.git
+    git clone git@github.com:ahocevar/ol-webpack.git
 
 Install the project dependencies.
 
