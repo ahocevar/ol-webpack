@@ -6,15 +6,15 @@
     "build": "webpack",
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "pretest": "eslint .",
-    "test": "webpack --config test/webpack.config.js && mocha test/bundle.js"
+    "test": "webpack --config test/webpack.config.js && phantomjs ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js test/index.html spec '{\"useColors\":true}'"
   },
   "devDependencies": {
     "canvas-prebuilt": "^1.6.5-prerelease.1",
     "eslint": "^3.19.0",
     "eslint-config-openlayers": "^7.0.0",
-    "jsdom": "^11.0.0",
-    "jsdom-global": "^3.0.2",
     "mocha": "^3.4.1",
+    "mocha-phantomjs-core": "^2.1.1",
+    "phantomjs-prebuilt": "^2.1.14",
     "should": "^11.2.1",
     "should-approximately-deep": "^1.1.0",
     "webpack": "^2.2.1",
