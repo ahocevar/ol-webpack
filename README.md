@@ -1,6 +1,6 @@
 # OpenLayers + Webpack
 
-[![Travis CI Status](https://travis-ci.org/ahocevar/ol-webpack.svg)](http://travis-ci.org/#!/ahocevar/ol-webpack)
+[![Travis CI Status](https://travis-ci.org/ahocevar/ol-webpack.svg?branch=master)](http://travis-ci.org/#!/ahocevar/ol-webpack)
 
 This example demonstrates how the `ol` package can be used with webpack 2. It includes a full configuration for a dev environment, and an example (`main.js`) which also shows how to import third party libraries.
 
