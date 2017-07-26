@@ -1,12 +1,12 @@
+import 'ol/ol.css';
 import GeoJSON from 'ol/format/geojson';
 import Map from 'ol/map';
-import OSM from 'ol/source/osm';
 import VectorLayer from 'ol/layer/vector';
 import VectorSource from 'ol/source/vector';
 import View from 'ol/view';
-import TileLayer from 'ol/layer/tile';
 import proj from 'ol/proj';
 import pointsAlongLine from './pointsalongline';
+import {apply} from 'ol-mapbox-style';
 
 var data = {
   'type': 'FeatureCollection',
@@ -53,14 +53,12 @@ vector.forEachFeature(function(feature) {
   feature.getGeometry().transform('EPSG:4326', 'EPSG:3857');
 });
 
-new Map({
+var map = new Map({
   target: 'map',
   layers: [
-    new TileLayer({
-      source: new OSM()
-    }),
     new VectorLayer({
-      source: vector
+      source: vector,
+      zIndex: 99
     })
   ],
   view: new View({
@@ -68,3 +66,5 @@ new Map({
     zoom: 15
   })
 });
+
+apply(map, 'https://rawgit.com/PetersonGIS/CamoStyle/b783aadd625bf0d874f77daa6c597b585f0b63fd/camo3d.json');

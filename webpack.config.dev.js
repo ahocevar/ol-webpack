@@ -6,5 +6,16 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader'}
+        ]
+      }
+    ]
   }
 };
