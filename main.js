@@ -48,7 +48,7 @@ var features = format.readFeatures(data);
 var vector = new VectorSource({
   features: features
 });
-vector.addFeatures(pointsAlongLine(features[0], 0.2));
+vector.addFeatures(pointsAlongLine(features[0],0.1));
 vector.forEachFeature(function(feature) {
   feature.getGeometry().transform('EPSG:4326', 'EPSG:3857');
 });
